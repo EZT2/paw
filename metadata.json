@@ -1,0 +1,12 @@
+{
+  "name": "PawAtlas",
+  "description": "A healing-style cat map encyclopedia featuring an interactive map, cat profiles with personality tags, and a community interaction area.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Interactive Maps",
+    "Social Features",
+    "AI-Powered Translation"
+  ]
+}
