@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🐾 PawAtlas
 
-# Run and deploy your AI Studio app
+一个全球化的猫咪打卡与百科 App。让每一只流浪猫都有自己的数字档案。
 
-This contains everything you need to run your app locally.
+![PawAtlas Logo](logo.png)
 
-View your app in AI Studio: https://ai.studio/apps/d4eb5e36-4253-4ea5-9e26-3f352ad77a10
+## 🌟 项目愿景
+- **全球猫咪打卡**：在地图上记录你偶遇的小猫。
+- **跨语言社区**：内置 AI 翻译，全球猫友无障碍沟通。
+- **公益与救助**：为 NGO 提供精准的流浪猫数据支持。
 
-## Run Locally
+## 🛠️ 技术栈
+- **前端**: Flutter
+- **后端**: Supabase (自托管在 Oracle Cloud)
+- **地图**: Mapbox
+- **AI**: Claude / Gemini
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📄 开源协议
+MIT License
