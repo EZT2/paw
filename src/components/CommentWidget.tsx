@@ -40,13 +40,13 @@ export const CommentWidget: React.FC<CommentWidgetProps> = ({ comment }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-sm border border-natural-orange/20 relative group">
+    <div className="bg-white p-4 rounded-2xl shadow-sm border border-modern-border/20 relative group">
       <div className="flex justify-between mb-1">
         <div className="flex items-center gap-2">
-          <div className="w-5 h-5 bg-natural-orange rounded-full flex items-center justify-center text-[10px]">
+          <div className="w-5 h-5 bg-modern-border rounded-full flex items-center justify-center text-[10px]">
             {comment.user.charAt(0)}
           </div>
-          <span className="text-[11px] font-bold text-natural-accent">{comment.user}</span>
+          <span className="text-[11px] font-bold text-modern-accent">{comment.user}</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-[10px] text-[#A89078]">{comment.timestamp}</span>
@@ -55,7 +55,7 @@ export const CommentWidget: React.FC<CommentWidgetProps> = ({ comment }) => {
               onClick={handleTranslate}
               disabled={isTranslating}
               className={cn(
-                "p-1.5 rounded-lg transition-colors hover:bg-natural-orange/20 text-natural-accent",
+                "p-1.5 rounded-lg transition-colors hover:bg-modern-border/20 text-modern-accent",
                 isTranslating && "animate-pulse"
               )}
               title="翻译到中文"
@@ -63,7 +63,7 @@ export const CommentWidget: React.FC<CommentWidgetProps> = ({ comment }) => {
               {isTranslating ? (
                 <Loader2 className="w-3 h-3 animate-spin" />
               ) : (
-                <Globe className={cn("w-3 h-3", !showOriginal && "text-natural-dark")} />
+                <Globe className={cn("w-3 h-3", !showOriginal && "text-modern-text")} />
               )}
             </button>
           )}
@@ -89,11 +89,11 @@ export const CommentWidget: React.FC<CommentWidgetProps> = ({ comment }) => {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-1"
             >
-              <p className="text-xs leading-normal text-natural-dark font-medium">
+              <p className="text-xs leading-normal text-modern-text font-medium">
                 {translatedText}
               </p>
-              <div className="text-[9px] text-natural-accent italic opacity-60 flex items-center gap-1">
-                <div className="w-1 h-1 bg-natural-accent rounded-full" />
+              <div className="text-[9px] text-modern-accent italic opacity-60 flex items-center gap-1">
+                <div className="w-1 h-1 bg-modern-accent rounded-full" />
                 由 PawAtlas AI 自动翻译
               </div>
             </motion.div>

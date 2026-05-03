@@ -98,23 +98,23 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-md mx-auto bg-natural-bg overflow-hidden relative shadow-2xl text-natural-text">
+    <div className="flex flex-col h-screen max-w-md mx-auto bg-modern-bg overflow-hidden relative shadow-2xl text-modern-text">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 bg-white/50 backdrop-blur-md z-10">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-natural-accent rounded-xl flex items-center justify-center shadow-lg shadow-orange-100">
+          <div className="w-8 h-8 bg-modern-accent rounded-xl flex items-center justify-center shadow-lg shadow-sm">
             <Camera className="w-5 h-5 text-white" />
           </div>
-          <h1 className="text-xl font-bold tracking-tight text-natural-dark">PawAtlas</h1>
+          <h1 className="text-xl font-bold tracking-tight text-modern-text">PawAtlas</h1>
         </div>
         <div className="flex gap-2">
            <button 
              onClick={() => setActiveView('check-in')}
-             className="w-8 h-8 bg-natural-orange rounded-full flex items-center justify-center text-natural-accent"
+             className="w-8 h-8 bg-modern-border rounded-full flex items-center justify-center text-modern-accent"
            >
              <Plus className="w-5 h-5" />
            </button>
-           <div className="w-8 h-8 bg-natural-orange rounded-full border-2 border-white overflow-hidden shadow-sm">
+           <div className="w-8 h-8 bg-modern-border rounded-full border-2 border-white overflow-hidden shadow-sm">
              <div className="w-full h-full flex items-center justify-center text-xs">👤</div>
            </div>
         </div>
@@ -129,12 +129,12 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="h-full relative bg-natural-map"
+              className="h-full relative bg-modern-bg"
             >
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#FFB347_1px,transparent_1px)] bg-[length:30px_30px]" />
               
               {/* Map UI Overlay */}
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-2xl text-[10px] font-bold shadow-sm border border-natural-orange/20">
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-2xl text-[10px] font-bold shadow-sm border border-modern-border/20">
                 Viewing: Global Network 🌍
               </div>
               
@@ -151,7 +151,7 @@ export default function App() {
                   }}
                   onClick={() => navigateToCat(cat)}
                 >
-                  <div className="bg-natural-accent p-1 rounded-full shadow-lg border-2 border-white transform hover:scale-110 active:scale-95 transition-all">
+                  <div className="bg-modern-accent p-1 rounded-full shadow-lg border-2 border-white transform hover:scale-110 active:scale-95 transition-all">
                     <div className="w-8 h-8 bg-white rounded-full overflow-hidden flex items-center justify-center text-sm">
                       🐾
                     </div>
@@ -160,8 +160,8 @@ export default function App() {
               ))}
 
               <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-                <button className="w-10 h-10 bg-white rounded-xl shadow-md flex items-center justify-center font-bold border border-natural-orange/20">+</button>
-                <button className="w-10 h-10 bg-white rounded-xl shadow-md flex items-center justify-center font-bold border border-natural-orange/20">-</button>
+                <button className="w-10 h-10 bg-white rounded-xl shadow-md flex items-center justify-center font-bold border border-modern-border/20">+</button>
+                <button className="w-10 h-10 bg-white rounded-xl shadow-md flex items-center justify-center font-bold border border-modern-border/20">-</button>
               </div>
             </motion.div>
           )}
@@ -175,7 +175,7 @@ export default function App() {
               className="p-6 space-y-6"
             >
               <div>
-                <h2 className="text-2xl font-serif">发现猫咪</h2>
+                <h2 className="text-2xl font-heading">发现猫咪</h2>
                 <p className="text-xs text-[#A89078] mt-1">遇见世界各地的治愈瞬间</p>
               </div>
 
@@ -185,19 +185,19 @@ export default function App() {
                     key={cat.id}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => navigateToCat(cat)}
-                    className="natural-card p-4 flex gap-4 cursor-pointer hover:border-natural-accent transition-colors"
+                    className="modern-card p-4 flex gap-4 cursor-pointer hover:border-modern-accent transition-colors"
                   >
-                    <div className="w-20 h-20 rounded-[20px] bg-natural-orange overflow-hidden flex-shrink-0 border-2 border-natural-orange/30">
+                    <div className="w-20 h-20 rounded-[20px] bg-modern-border overflow-hidden flex-shrink-0 border-2 border-modern-border/30">
                       <img src={cat.photoUrl} alt={cat.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                     </div>
                     <div className="flex-1 flex flex-col justify-center">
-                      <h3 className="font-serif text-lg leading-tight">{cat.name}</h3>
+                      <h3 className="font-heading text-lg leading-tight">{cat.name}</h3>
                       <div className="flex flex-wrap gap-1 mt-1">
-                        <span className="text-[9px] px-2 py-0.5 bg-natural-orange text-natural-accent font-bold rounded-full uppercase tracking-wider">
+                        <span className="text-[9px] px-2 py-0.5 bg-modern-border text-modern-accent font-bold rounded-full uppercase tracking-wider">
                           {cat.status}
                         </span>
                         {cat.tags.slice(0, 2).map((tag) => (
-                          <span key={tag} className="text-[9px] px-2 py-0.5 bg-natural-cream rounded-full">{tag}</span>
+                          <span key={tag} className="text-[9px] px-2 py-0.5 bg-modern-accent-light rounded-full">{tag}</span>
                         ))}
                       </div>
                       <p className="text-[10px] mt-2 opacity-60 flex items-center gap-1">
@@ -211,7 +211,7 @@ export default function App() {
 
               <button 
                 onClick={() => setActiveView('check-in')}
-                className="natural-button w-full"
+                className="modern-button-accent w-full"
               >
                 <Plus className="w-5 h-5" /> 我也要拍猫
               </button>
@@ -237,25 +237,25 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="p-8 -mt-10 bg-white rounded-t-[48px] relative border-t border-natural-orange/10">
+              <div className="p-8 -mt-10 bg-white rounded-t-[48px] relative border-t border-modern-border/10">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h2 className="text-3xl font-serif">{selectedCat.name}</h2>
+                    <h2 className="text-3xl font-heading">{selectedCat.name}</h2>
                     <p className="text-sm text-[#A89078] mt-1 flex items-center gap-1">
                       <Globe className="w-3 h-3" /> {selectedCat.location.address}
                     </p>
                   </div>
-                  <button className="p-4 bg-natural-cream rounded-3xl border border-natural-orange/30">
-                    <Heart className="w-6 h-6 text-natural-accent" />
+                  <button className="p-4 bg-modern-accent-light rounded-3xl border border-modern-border/30">
+                    <Heart className="w-6 h-6 text-modern-accent" />
                   </button>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-8">
-                  <span className="px-3 py-1 bg-natural-orange text-natural-accent text-[10px] font-bold rounded-full uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-modern-border text-modern-accent text-[10px] font-bold rounded-full uppercase tracking-wider">
                     {selectedCat.status}
                   </span>
                   {selectedCat.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-natural-cream text-natural-text text-[10px] font-bold rounded-full uppercase tracking-wider">
+                    <span key={tag} className="px-3 py-1 bg-modern-accent-light text-modern-text text-[10px] font-bold rounded-full uppercase tracking-wider">
                       {tag}
                     </span>
                   ))}
@@ -263,15 +263,15 @@ export default function App() {
 
                 <div className="space-y-8">
                   <section>
-                    <div className="text-sm border-l-4 border-natural-accent pl-4 italic opacity-80 leading-relaxed">
+                    <div className="text-sm border-l-4 border-modern-accent pl-4 italic opacity-80 leading-relaxed">
                       {selectedCat.description}
                     </div>
                   </section>
 
-                  <section className="border-t border-natural-orange/10 pt-8 pb-12">
+                  <section className="border-t border-modern-border/10 pt-8 pb-12">
                     <div className="flex items-center justify-between mb-4 font-bold">
                       <div className="flex items-center gap-2">
-                        <MessageCircle className="w-5 h-5 text-natural-accent" /> 社区动态
+                        <MessageCircle className="w-5 h-5 text-modern-accent" /> 社区动态
                       </div>
                     </div>
                     
@@ -291,11 +291,11 @@ export default function App() {
                       <input 
                         type="text" 
                         placeholder="留下你的治愈瞬间..." 
-                        className="flex-1 bg-natural-bg/50 border-none rounded-xl px-4 text-xs focus:ring-1 focus:ring-natural-accent outline-none"
+                        className="flex-1 bg-modern-bg/50 border-none rounded-xl px-4 text-xs focus:ring-1 focus:ring-modern-accent outline-none"
                         value={commentText}
                         onChange={e => setCommentText(e.target.value)}
                       />
-                      <button type="submit" className="natural-button py-2 px-4 text-xs">
+                      <button type="submit" className="modern-button-accent py-2 px-4 text-xs">
                         <Send className="w-4 h-4" />
                       </button>
                     </form>
@@ -314,8 +314,8 @@ export default function App() {
               className="bg-white h-full p-8 space-y-6"
             >
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-serif">记录这只猫</h2>
-                <button onClick={() => setActiveView('discover')} className="p-2 bg-natural-bg rounded-lg">
+                <h2 className="text-2xl font-heading">记录这只猫</h2>
+                <button onClick={() => setActiveView('discover')} className="p-2 bg-modern-bg rounded-lg">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -327,7 +327,7 @@ export default function App() {
                     required
                     type="text" 
                     placeholder="例如: 芝麻, Mochi..." 
-                    className="natural-input"
+                    className="modern-input"
                     value={newCat.name}
                     onChange={e => setNewCat(prev => ({...prev, name: e.target.value}))}
                   />
@@ -338,7 +338,7 @@ export default function App() {
                   <textarea 
                     rows={3}
                     placeholder="它有什么特别的性格或习惯吗?" 
-                    className="natural-input"
+                    className="modern-input"
                     value={newCat.description}
                     onChange={e => setNewCat(prev => ({...prev, description: e.target.value}))}
                   />
@@ -355,8 +355,8 @@ export default function App() {
                         className={cn(
                           "px-2 py-3 rounded-xl text-[10px] font-bold border transition-all",
                           newCat.status === status 
-                            ? "bg-natural-accent border-natural-accent text-white" 
-                            : "bg-white border-natural-orange/50 grayscale opacity-60"
+                            ? "bg-modern-accent border-modern-accent text-white" 
+                            : "bg-white border-modern-border/50 grayscale opacity-60"
                         )}
                       >
                         {status}
@@ -371,7 +371,7 @@ export default function App() {
                     type="button"
                     onClick={handleGetLocation}
                     disabled={isLocating}
-                    className="w-full p-4 rounded-2xl bg-natural-orange/30 border border-dashed border-natural-accent/50 flex items-center justify-center gap-2 text-xs font-bold text-natural-accent"
+                    className="w-full p-4 rounded-2xl bg-modern-border/30 border border-dashed border-modern-accent/50 flex items-center justify-center gap-2 text-xs font-bold text-modern-accent"
                   >
                     {isLocating ? (
                       <span className="animate-pulse">正在获取 GPS...</span>
@@ -387,7 +387,7 @@ export default function App() {
                 </div>
 
                 <div className="pt-4">
-                  <button type="submit" className="natural-button w-full">
+                  <button type="submit" className="modern-button-accent w-full">
                     确认打卡并上传
                   </button>
                   <p className="text-[10px] text-center mt-4 opacity-40">
@@ -407,34 +407,34 @@ export default function App() {
               className="p-8 space-y-8"
             >
               <div className="text-center space-y-4">
-                <div className="w-24 h-24 bg-natural-orange rounded-[32px] mx-auto shadow-2xl ring-8 ring-white border-2 border-natural-orange/20 overflow-hidden flex items-center justify-center text-4xl">
+                <div className="w-24 h-24 bg-modern-border rounded-[32px] mx-auto shadow-2xl ring-8 ring-white border-2 border-modern-border/20 overflow-hidden flex items-center justify-center text-4xl">
                   🐱
                 </div>
                 <div>
-                  <h2 className="text-2xl font-serif">猫咪体验官</h2>
+                  <h2 className="text-2xl font-heading">猫咪体验官</h2>
                   <p className="text-xs text-[#A89078]">已记录 {cats.length} 个治愈瞬间</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="natural-card p-6 text-center">
-                  <div className="text-2xl font-serif">24</div>
+                <div className="modern-card p-6 text-center">
+                  <div className="text-2xl font-heading">24</div>
                   <div className="text-[10px] uppercase font-bold tracking-widest opacity-40">地图足迹</div>
                 </div>
-                <div className="natural-card p-6 text-center">
-                  <div className="text-2xl font-serif">156</div>
+                <div className="modern-card p-6 text-center">
+                  <div className="text-2xl font-heading">156</div>
                   <div className="text-[10px] uppercase font-bold tracking-widest opacity-40">收到的赞</div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <div className="px-2 text-[10px] font-bold uppercase tracking-widest opacity-40">设置</div>
-                <div className="natural-card p-2">
-                  <button className="w-full p-4 flex items-center justify-between text-sm hover:bg-natural-bg/50 transition-colors rounded-2xl">
+                <div className="modern-card p-2">
+                  <button className="w-full p-4 flex items-center justify-between text-sm hover:bg-modern-bg/50 transition-colors rounded-2xl">
                     <span>我的收藏</span>
                     <ChevronRight className="w-4 h-4 opacity-30" />
                   </button>
-                  <button className="w-full p-4 flex items-center justify-between text-sm hover:bg-natural-bg/50 transition-colors rounded-2xl">
+                  <button className="w-full p-4 flex items-center justify-between text-sm hover:bg-modern-bg/50 transition-colors rounded-2xl">
                     <span>隐私保护设置</span>
                     <ChevronRight className="w-4 h-4 opacity-30" />
                   </button>
@@ -446,7 +446,7 @@ export default function App() {
       </main>
 
       {/* Floating Navigation */}
-      <nav className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-white px-2 py-2 rounded-full shadow-[0_20px_50px_rgba(255,179,71,0.2)] flex items-center gap-1 z-20">
+      <nav className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-white px-3 py-3 rounded-[32px] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex items-center gap-2 z-20">
         <NavButton 
           active={activeView === 'map'} 
           onClick={() => setActiveView('map')} 
@@ -475,8 +475,8 @@ function NavButton({ active, onClick, icon, label }: { active: boolean; onClick:
     <button 
       onClick={onClick} 
       className={cn(
-        "flex flex-col items-center gap-1 px-5 py-2 rounded-full transition-all duration-300",
-        active ? "bg-natural-accent text-white scale-105 shadow-lg shadow-orange-200" : "text-natural-text opacity-40 hover:opacity-60"
+        "flex flex-col items-center gap-1 px-5 py-2.5 rounded-[24px] transition-all duration-300",
+        active ? "bg-modern-text text-white scale-105 shadow-xl" : "text-modern-text opacity-50 hover:opacity-100 hover:bg-modern-border/30"
       )}
     >
       {icon}

@@ -1,45 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-natural-bg: #FFFDF5;
-  --color-natural-text: #5C4D3C;
-  --color-natural-accent: #FFB347;
-  --color-natural-dark: #4A3D2D;
-  --color-natural-yellow: #FDE68A;
-  --color-natural-orange: #FFEDD5;
-  --color-natural-cream: #FFFBEB;
-  --color-natural-map: #FDF4E3;
+  --color-modern-bg: #F8FAFC; 
+  --color-modern-card: #FFFFFF;
+  --color-modern-text: #0F172A;
+  --color-modern-text-muted: #64748B;
+  --color-modern-accent: #FF7043;
+  --color-modern-accent-light: #FFF0ED;
+  --color-modern-border: #E2E8F0;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
-
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
-  --radius-3xl: 2.5rem;
-  --radius-4xl: 3rem;
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-natural-bg text-natural-text font-sans selection:bg-natural-orange;
+    @apply bg-modern-bg text-modern-text font-sans selection:bg-modern-accent-light selection:text-modern-accent;
   }
 
-  h1, h2, h3, .font-serif {
-    @apply font-serif font-bold text-natural-dark;
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    @apply font-heading font-bold text-modern-text tracking-tight;
   }
 }
 
 @layer components {
-  .natural-card {
-    @apply bg-white rounded-[40px] shadow-xl shadow-amber-100/50 border border-amber-50;
+  .modern-card {
+    @apply bg-modern-card rounded-[28px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-modern-border/30;
   }
 
-  .natural-button {
-    @apply bg-natural-accent hover:bg-natural-dark text-white font-bold px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-100 active:scale-95 flex items-center justify-center gap-2;
+  .modern-button {
+    @apply bg-modern-text hover:bg-black text-white font-medium px-6 py-4 rounded-[20px] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2;
   }
 
-  .natural-input {
-    @apply w-full bg-white rounded-2xl p-4 border border-natural-orange focus:border-natural-accent focus:ring-1 focus:ring-natural-accent outline-none transition-all text-sm;
+  .modern-button-accent {
+    @apply bg-modern-accent hover:opacity-90 text-white font-medium px-6 py-4 rounded-[20px] transition-all duration-300 active:scale-[0.98] shadow-[0_8px_20px_rgba(255,112,67,0.25)] flex items-center justify-center gap-2;
+  }
+
+  .modern-input {
+    @apply w-full bg-modern-bg/80 rounded-[20px] p-4 border border-modern-border focus:bg-white focus:border-modern-accent focus:ring-4 focus:ring-modern-accent-light outline-none transition-all text-sm font-medium;
   }
 }
