@@ -4,7 +4,7 @@
 **一个全球化的猫咪打卡与百科 App。让每一只流浪猫都有自己的数字档案。**
 
 <p align="center">
-  <img src="logo.png" alt="PawAtlas Logo" width="200" height="200">
+  <img src="logo.png" alt="PawAtlas Logo" width="400" height="400">
 </p>
 
 ---
